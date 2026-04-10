@@ -1,0 +1,137 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Navbar ─────────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.navbar-icon { font-size: 2rem; }
+
+.navbar-title {
+  font-size: 1.5rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.navbar-sub {
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.navbar-links { display: flex; gap: .5rem; }
+
+.nav-link {
+  padding: .45rem 1.1rem;
+  border-radius: 6px;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: background .15s, color .15s;
+}
+.nav-link:hover { background: var(--bg3); color: var(--text); }
+.nav-link.active { background: var(--gold); color: #0f0e0c; font-weight: 600; }
+
+/* ── Main ────────────────────────────────────────────────── */
+.app-main {
+  flex: 1;
+  padding: 2.5rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: 1.25rem;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  font-size: .8rem;
+  color: var(--muted);
+}
+.footer strong { color: var(--gold-lt); }
+
+/* ── Page title ──────────────────────────────────────────── */
+.page-title {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: .35rem;
+}
+.page-subtitle {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* ── Toast / alert ──────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: .85rem 1.4rem;
+  border-radius: var(--radius);
+  font-size: .9rem;
+  font-weight: 500;
+  z-index: 999;
+  animation: slideIn .25s ease;
+  box-shadow: var(--shadow);
+}
+.toast.success { background: var(--green); color: #fff; }
+.toast.error   { background: var(--red);   color: #fff; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Shared btn ──────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .55rem 1.2rem;
+  border-radius: 7px;
+  font-size: .88rem;
+  font-weight: 600;
+  transition: opacity .15s, transform .1s;
+}
+.btn:hover  { opacity: .85; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary { background: var(--gold); color: #0f0e0c; }
+.btn-danger  { background: var(--red);  color: #fff; }
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover { color: var(--text); background: var(--bg3); opacity: 1; }
+
+/* ── Empty state ─────────────────────────────────────────── */
+.empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--muted);
+}
+.empty-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+.empty h3   { font-size: 1.25rem; color: var(--text); margin-bottom: .4rem; }
